@@ -6,6 +6,16 @@ const authRouter=require('./routes/auth');
 const userRouter=require('./routes/users');
 const movieRouter=require('./routes/movies');
 const listRouter=require('./routes/lists');
+const cors=require('cors');
+
+
+app.use(cors(
+    {
+        origin: ["https://netflix-ui-tau.vercel.app/register"],
+        methods: ["POST","GET"],
+        credentials: true
+    }
+));
 
 dotenv.config();
 mongoose.connect(process.env.MONGO_URL);
