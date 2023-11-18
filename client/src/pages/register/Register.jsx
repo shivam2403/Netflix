@@ -18,13 +18,14 @@ export default function Register() {
   const handleStart=()=>{
     setEmail(emailRef.current.value)
   }
-  
+
+  axios.defaults.withCredentials=true;
   const handleFinish=async(e)=>{
     e.preventDefault();
     setPassword(passwordRef.current.value);
     setUsername(usernameRef.current.value);
     try {
-      await axios.post('auth/register',{email,username,password});
+      await axios.post('https://netflix-ashy-delta.vercel.app/register',{email,username,password});
       navigate('/login'); // Replace history.push with navigate
     } catch (error) {
       console.log(error)
