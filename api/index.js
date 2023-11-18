@@ -11,7 +11,7 @@ const cors=require('cors');
 
 app.use(cors(
     {
-        origin: ["https://netflix-ui-tau.vercel.app/register"],
+        origin: ["https://netflix-ui-tau.vercel.app"],
         methods: ["POST","GET"],
         credentials: true
     }
