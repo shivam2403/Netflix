@@ -25,7 +25,7 @@ export default function Register() {
     setPassword(passwordRef.current.value);
     setUsername(usernameRef.current.value);
     try {
-      await axios.post('https://netflix-api-phi.vercel.app/register',{email,username,password});
+      await axios.post('https://netflix-api-phi.vercel.app/register/',{email,username,password});
       navigate('/login'); // Replace history.push with navigate
     } catch (error) {
       console.log(error)
